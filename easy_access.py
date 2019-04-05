@@ -26,7 +26,7 @@ def cisco_login(host, port, ssl, username, password):
     if ssl == True:
         base_url = "https://%s:%s/" %(host, port)
     else:
-        base_url = "https://%s:%s/" %(host, port)
+        base_url = "http://%s:%s/" %(host, port)
     login_url = "%scgi-bin/userLogin.cgi" %(base_url)
     print "{+} Sending request to %s to extract auth key..." %(base_url)
     auth_key = extract_auth_key(session=s, base_url=base_url)
